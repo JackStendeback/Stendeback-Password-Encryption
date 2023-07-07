@@ -1,6 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// This line of code is used to generate a password when the button is clicked.
+document.getElementById("generate").addEventListener("click", generatePassword);
+
+
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
