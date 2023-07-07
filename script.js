@@ -52,8 +52,9 @@ function generatePassword() {
     password += characterOptions[randomIndex];
   }
 
-  // This line of code is used to display the generated password. I will need to fix this and put it inside the text box.
-  alert("Generated Password: " + password);
+  // This line of code is used to return the password.
+  // Makes the password show up within the text box instead of as an alert!
+  return password;
 }
 
 
@@ -69,7 +70,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 
 }
 
