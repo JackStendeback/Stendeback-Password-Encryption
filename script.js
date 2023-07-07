@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// This line of code is used to generate a password when the button is clicked.
-document.getElementById("generate").addEventListener("click", generatePassword);
+// This line of code is used to generate a password when the button is clicked. It was calling my function twice, so I changed the code to "writePassword" to fix it.
+document.getElementById("generate").addEventListener("click", writePassword);
 
 function generatePassword() {
   const length = prompt("Enter desired password length between 8 and 128 characters.");
@@ -57,21 +57,18 @@ function generatePassword() {
   return password;
 }
 
-
-
-// Write password to the #password input
-// Q: Why is the function writePassword() not working?
-
-
-
-
+// This line of code is used to write the password to the #password input.
 function writePassword() {
-  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  // Clear the input field before generating a new password
+  passwordText.value = "";
 
+  var password = generatePassword();
+
+  if (password) {
+    passwordText.value = password;
+  }
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
