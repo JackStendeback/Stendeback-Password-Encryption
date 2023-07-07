@@ -59,11 +59,17 @@ function generatePassword() {
 
 
 // Write password to the #password input
+// Q: Why is the function writePassword() not working?
+
+
+
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
 
 }
 
