@@ -19,7 +19,41 @@ function generatePassword() {
   const includeNumeric = confirm("Do you want to include numeric characters?");
   const includeSpecial = confirm("Do you want to include special characters?");
 
-  
+  // This line of code is used to validate the password criteria.
+  if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
+    alert("At least one character type must be selected!");
+    return;
+  }
+
+  // This line of code is used to generate the password.
+  let characterOptions = "";
+
+  if (includeLowercase) {
+    characterOptions += "abcdefghijklmnopqrstuvwxyz";
+  }
+
+  if (includeUppercase) {
+    characterOptions += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+
+  if (includeNumeric) {
+    characterOptions += "0123456789";
+  }
+
+  if (includeSpecial) {
+    characterOptions += "!@#$%^&*()";
+  }
+
+  let password = "";
+
+  // Still assisting in generating the password using math.random and math.floor.
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characterOptions.length);
+    password += characterOptions[randomIndex];
+  }
+
+  // This line of code is used to display the generated password. I will need to fix this and put it inside the text box.
+  alert("Generated Password: " + password);
 }
 
 
